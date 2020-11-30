@@ -24,8 +24,9 @@ etap=xphiA/xphiB
 Kap=KaA*xsolv/xHplus
 Kbp=KaB*xsolv/xOHmin
 Kop=Keo*xmphiA*Ma*vs
-KNap=xNaplus*KaA/(xHplus*KaNa)
-KClp=xClmin*KaB/(xOHmin*KaCl)
+
+KNap=xNaplus*KaA*xsolv/(vsal*xHplus*KaNa*(xsolv**vsal))
+KClp=xClmin*KaB*xsolv/(vsal*xOHmin*KaCl*(xsolv**vsal))
 
 Knew=Kop*Kap*Kbp/((1.0+Kap+KNap)*(1.0+Kbp+KClp))
 frac(2)=0.5*(1.0+etap+etap/Knew )-( (0.5*(1.0+etap+etap/Knew))**2-etap)**0.5;!fB_a
